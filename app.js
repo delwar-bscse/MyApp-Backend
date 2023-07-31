@@ -3,6 +3,7 @@ import cors from 'cors';
 import morgan from 'morgan';
 import fileUpload from 'express-fileupload';
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
 
 import userRouter from './routes/userRoute.js';
 import errorMiddleware from './utils/errorMiddleware.js';
@@ -10,6 +11,9 @@ import categoryRouter from './routes/categoryRotes.js';
 import productRouter from './routes/productRoute.js';
 import orderRouter from './routes/orderRoutes.js';
 
+
+// dotenv.config({path:"./config/config.env"});
+dotenv.config();
 
 const app = express();
 

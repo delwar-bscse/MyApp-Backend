@@ -1,13 +1,17 @@
 import braintree from 'braintree';
 import orderModel from '../models/orderModel.js';
+import dotenv from 'dotenv';
 
-// console.log(process.env.BRAINTREE_PUBLIC_KEY);
+dotenv.config();
+
+
+
 
 var gateway = new braintree.BraintreeGateway({
     environment: braintree.Environment.Sandbox,
-    merchantId: "x5969z3bj88z7nzy",
-    publicKey: "w3543nhj6s5khd2w",
-    privateKey: "ffd29a477d08632be3abb42714b99387"
+    merchantId: process.env.BRAINTREE_MERCHANT_ID,
+    publicKey: process.env.BRAINTREE_PUBLIC_KEY,
+    privateKey: process.env.BRAINTREE_PRIVATE_KEY
   });
 
 //Order's token create
